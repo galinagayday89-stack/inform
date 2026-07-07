@@ -209,12 +209,34 @@ details[open] .chev{transform:rotate(180deg)}
 .t-oral{background:var(--c4-soft);color:var(--c4)}
 .t-prac{background:var(--c3-soft);color:var(--c3)}
 .t-creative{background:var(--c6-soft);color:var(--c6)}
-.ch1 .rome{background:var(--c1)} .ch1 .num{background:var(--c1-soft);color:var(--c1)} .ch1 li.check{color:var(--c1)}
-.ch2 .rome{background:var(--c2)} .ch2 .num{background:var(--c2-soft);color:var(--c2)} .ch2 li.check{color:var(--c2)}
-.ch3 .rome{background:var(--c3)} .ch3 .num{background:var(--c3-soft);color:var(--c3)} .ch3 li.check{color:var(--c3)}
-.ch4 .rome{background:var(--c4)} .ch4 .num{background:var(--c4-soft);color:var(--c4)} .ch4 li.check{color:var(--c4)}
-.ch5 .rome{background:var(--c5)} .ch5 .num{background:var(--c5-soft);color:var(--c5)} .ch5 li.check{color:var(--c5)}
-.ch6 .rome{background:var(--c6)} .ch6 .num{background:var(--c6-soft);color:var(--c6)} .ch6 li.check{color:var(--c6)}
+.lessons li.checkli summary{font-weight:800;letter-spacing:.02em}
+.selfcheck{margin:2px 0 14px 46px;background:var(--bg);border-radius:12px;padding:14px 16px}
+@media (max-width:600px){.selfcheck{margin-left:0}}
+.selfcheck .sc-intro{font-size:14px;font-weight:800;color:var(--ink-soft);margin-bottom:6px}
+.selfcheck label{
+  display:flex;gap:10px;align-items:flex-start;padding:8px 0;
+  font-size:14.5px;color:var(--ink);cursor:pointer;border-top:1px dashed var(--line);
+}
+.selfcheck label:first-of-type{border-top:none}
+.selfcheck input{width:19px;height:19px;margin:1px 0 0;accent-color:var(--brand);flex:none;cursor:pointer}
+.sc-progress{margin-top:10px;font-family:var(--font-mono);font-size:12.5px;font-weight:700;color:var(--ink-soft)}
+.sc-progress.done{color:#0A6B5E}
+.miniquiz{margin:2px 0 14px 46px;background:var(--bg);border-radius:12px;padding:16px}
+@media (max-width:600px){.miniquiz{margin-left:0}}
+.miniquiz .mq-progress{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:8px}
+.miniquiz .mq-q{font-weight:800;font-size:15.5px;margin-bottom:12px;color:var(--ink)}
+.miniquiz .quiz-opts{gap:8px}
+.miniquiz .quiz-opt{background:var(--surface);min-height:44px;font-size:14.5px;padding:10px 14px}
+.miniquiz .quiz-feedback{font-size:14px;min-height:22px;margin-top:10px}
+.miniquiz .mq-next{margin-top:10px}
+.miniquiz .mq-result{text-align:center;padding:6px 0}
+.miniquiz .mq-result .big{font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--brand);margin-bottom:6px}
+.ch1 .rome{background:var(--c1)} .ch1 .num{background:var(--c1-soft);color:var(--c1)} .ch1 li.check,.ch1 .checkli summary{color:var(--c1)}
+.ch2 .rome{background:var(--c2)} .ch2 .num{background:var(--c2-soft);color:var(--c2)} .ch2 li.check,.ch2 .checkli summary{color:var(--c2)}
+.ch3 .rome{background:var(--c3)} .ch3 .num{background:var(--c3-soft);color:var(--c3)} .ch3 li.check,.ch3 .checkli summary{color:var(--c3)}
+.ch4 .rome{background:var(--c4)} .ch4 .num{background:var(--c4-soft);color:var(--c4)} .ch4 li.check,.ch4 .checkli summary{color:var(--c4)}
+.ch5 .rome{background:var(--c5)} .ch5 .num{background:var(--c5-soft);color:var(--c5)} .ch5 li.check,.ch5 .checkli summary{color:var(--c5)}
+.ch6 .rome{background:var(--c6)} .ch6 .num{background:var(--c6-soft);color:var(--c6)} .ch6 li.check,.ch6 .checkli summary{color:var(--c6)}
 
 /* Дві аудиторії */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -284,6 +306,57 @@ details[open] .chev{transform:rotate(180deg)}
 }
 .game-rules ol{margin:0;padding-left:20px;display:grid;gap:6px}
 .game-rules ol li{font-size:14.5px;color:var(--ink)}
+.game-rules.in-list{margin:2px 0 14px 46px;border-top:none;padding-top:0}
+@media (max-width:600px){.game-rules.in-list{margin-left:0}}
+
+/* Ігрова кімната */
+.arcade{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:860px){.arcade{grid-template-columns:1fr}}
+.arcade-panel{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:24px;
+}
+.arcade-panel h3{font-family:var(--font-display);font-size:17px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.arcade-panel .sub{font-size:14.5px;color:var(--ink-soft);margin-bottom:16px}
+.a-btn{
+  min-height:44px;padding:8px 18px;border-radius:12px;border:2px solid var(--line);
+  background:var(--bg);font:800 15px var(--font-body);color:var(--ink);cursor:pointer;
+}
+.a-btn:hover{border-color:var(--brand);color:var(--brand-dark)}
+.a-btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.a-btn.primary:hover{background:var(--brand-dark)}
+.a-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.a-status{margin-top:12px;font-weight:800;min-height:24px}
+.a-status.ok{color:#0A6B5E}.a-status.no{color:#B3282D}
+.a-score{font-family:var(--font-mono);font-size:13px;color:var(--ink-soft)}
+/* двійкова гра */
+.bin-word{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.bin-chip{font-family:var(--font-mono);font-weight:700;font-size:14px;background:var(--c4-soft);color:var(--c4);border-radius:10px;padding:8px 10px}
+.bin-table{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0;font-family:var(--font-mono);font-size:12.5px}
+.bin-table span{background:var(--bg);border-radius:8px;padding:6px 8px;text-align:center;color:var(--ink-soft)}
+.bin-answer{font-family:var(--font-display);font-size:22px;letter-spacing:.2em;min-height:34px;margin:8px 0;color:var(--brand-dark)}
+.bin-keys{display:flex;gap:8px;flex-wrap:wrap}
+.bin-keys button{width:44px;height:44px;border-radius:12px;border:2px solid var(--line);background:var(--surface);font:800 17px var(--font-body);cursor:pointer}
+.bin-keys button:hover{border-color:var(--brand)}
+/* пірат і мозаїка */
+.grid-board{display:grid;gap:4px;margin:12px 0;max-width:320px}
+.grid-board .cell{
+  aspect-ratio:1/1;border-radius:8px;background:var(--bg);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:20px;user-select:none;
+}
+.grid-board.paintable .cell{cursor:pointer}
+.grid-board .cell.paint{background:var(--brand);border-color:var(--brand)}
+.pirate-cmds{font-size:22px;letter-spacing:.1em;min-height:32px;margin-top:8px}
+.dpad button{width:48px;height:48px;border-radius:12px;border:2px solid var(--line);background:var(--surface);font-size:19px;cursor:pointer}
+.dpad button:hover{border-color:var(--brand)}
+.code-lines{font-family:var(--font-mono);font-size:13px;background:var(--bg);border-radius:12px;padding:12px 14px;margin:10px 0;display:grid;gap:4px}
+/* множення */
+.mul-q{font-family:var(--font-display);font-size:34px;font-weight:800;color:var(--brand-dark);min-height:46px;margin:8px 0}
+.mul-input{
+  width:110px;min-height:48px;border:2px solid var(--line);border-radius:12px;
+  font:800 20px var(--font-body);text-align:center;color:var(--ink);background:var(--surface);
+}
+.mul-input:focus{border-color:var(--brand);outline:none}
 .game .tag{
   align-self:flex-start;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
   padding:5px 10px;border-radius:999px;
@@ -346,6 +419,7 @@ footer b{color:var(--ink)}
       <li><a href="#audytorii">Кому цей сайт</a></li>
       <li><a href="#trenazher">Тренажер</a></li>
       <li><a href="#igry">Ігри та STEM</a></li>
+      <li><a href="#hrayonline">Пограй онлайн</a></li>
       <li><a href="#slovnyk">Словничок</a></li>
       <li><a href="#avtor">Про автора</a></li>
     </ul>
@@ -430,7 +504,10 @@ footer b{color:var(--ink)}
               <li><span class="t-tag t-creative">Творчо</span>Намалюй пам'ятку «Що робити, якщо надійшов підозрілий лист» із трьох кроків.</li>
             </ul>
           </details></li>
-          <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 19</span></li>
+          <li class="checkli"><details>
+            <summary><span class="num">✓</span>Перевір себе<span class="hint">с. 19 · запитання</span></summary>
+            <div class="miniquiz" data-mq="1"></div>
+          </details></li>
         </ul>
       </details>
 
@@ -497,7 +574,10 @@ footer b{color:var(--ink)}
               <li><span class="t-tag t-creative">Творчо</span>Напиши коротку розповідь про свій день із трьох абзаців: ранок, школа, вечір.</li>
             </ul>
           </details></li>
-          <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 42</span></li>
+          <li class="checkli"><details>
+            <summary><span class="num">✓</span>Перевір себе<span class="hint">с. 42 · запитання</span></summary>
+            <div class="miniquiz" data-mq="2"></div>
+          </details></li>
         </ul>
       </details>
 
@@ -556,7 +636,10 @@ footer b{color:var(--ink)}
               <li><span class="t-tag t-creative">Творчо</span>Намалюй схему комп'ютера і підпиши його частини, як на карті мандрівника.</li>
             </ul>
           </details></li>
-          <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 58</span></li>
+          <li class="checkli"><details>
+            <summary><span class="num">✓</span>Перевір себе<span class="hint">с. 58 · запитання</span></summary>
+            <div class="miniquiz" data-mq="3"></div>
+          </details></li>
         </ul>
       </details>
 
@@ -607,7 +690,10 @@ footer b{color:var(--ink)}
               <li><span class="t-tag t-creative">Творчо</span>Склади таблицю «Улюблені книжки нашої родини»: хто, яка книжка, чому подобається.</li>
             </ul>
           </details></li>
-          <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 73</span></li>
+          <li class="checkli"><details>
+            <summary><span class="num">✓</span>Перевір себе<span class="hint">с. 73 · запитання</span></summary>
+            <div class="miniquiz" data-mq="4"></div>
+          </details></li>
           <li><details>
             <summary><span class="num">23</span>Створюємо модель<span class="hint">с. 74 · завдання</span></summary>
             <ul class="tasks">
@@ -640,7 +726,10 @@ footer b{color:var(--ink)}
               <li><span class="t-tag t-creative">Творчо</span>Знайди у своїй таблиці погоди найтеплішій і найхолодніший день тижня.</li>
             </ul>
           </details></li>
-          <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 81</span></li>
+          <li class="checkli"><details>
+            <summary><span class="num">✓</span>Перевір себе<span class="hint">с. 81 · запитання</span></summary>
+            <div class="miniquiz" data-mq="5"></div>
+          </details></li>
         </ul>
       </details>
 
@@ -683,7 +772,10 @@ footer b{color:var(--ink)}
               <li><span class="t-tag t-creative">Творчо</span>Гра «Детектив»: за трьома істинними висловлюваннями-підказками клас відгадує задуманий предмет.</li>
             </ul>
           </details></li>
-          <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 93</span></li>
+          <li class="checkli"><details>
+            <summary><span class="num">✓</span>Перевір себе<span class="hint">с. 93 · запитання</span></summary>
+            <div class="miniquiz" data-mq="6"></div>
+          </details></li>
           <li><details>
             <summary><span class="num">31</span>Створюємо прості програми<span class="hint">с. 95 · завдання</span></summary>
             <ul class="tasks">
@@ -710,15 +802,105 @@ footer b{color:var(--ink)}
           <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
         <ul class="lessons">
-          <li class="plain"><span class="num">1</span>Гра «Двійкове кодування»<span class="page">с. 101</span></li>
-          <li class="plain"><span class="num">2</span>Гра «Шифрувальник»<span class="page">с. 102</span></li>
-          <li class="plain"><span class="num">3</span>Гра «Піратський корабель у пошуках скарбів»<span class="page">с. 103</span></li>
-          <li class="plain"><span class="num">4</span>Гра «Закодуй фігуру»<span class="page">с. 104</span></li>
-          <li class="plain"><span class="num">5</span>Гра «Мозаїка»<span class="page">с. 105</span></li>
-          <li class="plain"><span class="num">6</span>Гра «Табличка множення»<span class="page">с. 106</span></li>
-          <li class="plain"><span class="num">7</span>Проєкт «Дивна витинанка»<span class="page">с. 107</span></li>
-          <li class="plain"><span class="num">8</span>Проєкт «Вежа»<span class="page">с. 108</span></li>
-          <li class="plain"><span class="num">9</span>Проєкт «Мудрий циркуль»<span class="page">с. 109</span></li>
+          <li><details>
+            <summary><span class="num">1</span>Гра «Двійкове кодування»<span class="hint">с. 101 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: папір, олівці або картки з 0 та 1</p>
+              <ol>
+                <li>Разом придумайте код: кожній літері абетки — свій набір нулів та одиниць (наприклад, А — 00001).</li>
+                <li>Перший гравець закодовує коротке слово й передає код другому.</li>
+                <li>Другий розкодовує. Хто швидше й без помилок — чемпіон кодування!</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">2</span>Гра «Шифрувальник»<span class="hint">с. 102 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: папір та олівці</p>
+              <ol>
+                <li>Придумайте шифр: зсуньте абетку на одну літеру (А→Б) або замініть літери значками.</li>
+                <li>Зашифруйте коротке послання другові й обміняйтеся ключами.</li>
+                <li>Розшифруйте отримане. Ускладнення: розгадайте шифр без ключа!</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">3</span>Гра «Піратський корабель у пошуках скарбів»<span class="hint">с. 103 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: аркуш у клітинку, фішка-«корабель»</p>
+              <ol>
+                <li>Накресліть карту-поле у клітинку та таємно позначте скарб.</li>
+                <li>«Капітан» диктує команди: «2 клітинки вгору, 1 праворуч…».</li>
+                <li>«Корабель» рухається лише за командами. Дістався скарбу — перемога!</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">4</span>Гра «Закодуй фігуру»<span class="hint">с. 104 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: два аркуші в клітинку, олівці</p>
+              <ol>
+                <li>Перший гравець малює фігуру по клітинках, не показуючи її.</li>
+                <li>Описує її кодом: звідки почати та куди вести лінію.</li>
+                <li>Другий малює лише за кодом. Порівняйте: збіглося — код правильний!</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">5</span>Гра «Мозаїка»<span class="hint">с. 105 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: аркуш у клітинку, кольорові олівці</p>
+              <ol>
+                <li>Складіть код-таблицю: яка клітинка якого кольору.</li>
+                <li>Передайте другові лише код, без малюнка.</li>
+                <li>Друг зафарбовує клітинки за кодом — вийде піксельний малюнок!</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">6</span>Гра «Табличка множення»<span class="hint">с. 106 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: картки з прикладами</p>
+              <ol>
+                <li>Поділіться на дві команди та станьте у два ряди.</li>
+                <li>Ведучий показує приклад — перші у рядах відповідають на швидкість.</li>
+                <li>Правильно — крок уперед, помилка — назад. Хто перший на фініші — переміг!</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">7</span>Проєкт «Дивна витинанка»<span class="hint">с. 107 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: папір, ножиці, олівець</p>
+              <ol>
+                <li>Складіть аркуш навпіл кілька разів і запишіть алгоритм вирізання.</li>
+                <li>Виріжте точно за алгоритмом, без імпровізації.</li>
+                <li>Розгорніть: чи такий візерунок задумали? Знайдіть осі симетрії.</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">8</span>Проєкт «Вежа»<span class="hint">с. 108 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: папір або трубочки, скотч, лінійка</p>
+              <ol>
+                <li>Накресліть план вежі: основа, поверхи.</li>
+                <li>За 10 хвилин збудуйте точно за планом.</li>
+                <li>Виміряйте висоту та перевірте стійкість: 30 секунд без падіння!</li>
+              </ol>
+            </div>
+          </details></li>
+          <li><details>
+            <summary><span class="num">9</span>Проєкт «Мудрий циркуль»<span class="hint">с. 109 · як грати</span></summary>
+            <div class="game-rules in-list">
+              <p class="need">Потрібно: циркуль, олівець, папір</p>
+              <ol>
+                <li>Складіть алгоритм: скільки кіл, яких радіусів і де креслити.</li>
+                <li>Побудуйте візерунок точно за алгоритмом і розфарбуйте.</li>
+                <li>Обміняйтеся алгоритмами з другом: чи вийдуть однакові орнаменти?</li>
+              </ol>
+            </div>
+          </details></li>
         </ul>
       </details>
 
@@ -885,6 +1067,140 @@ footer b{color:var(--ink)}
           </ol>
         </div>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- ІГРОВА КІМНАТА -->
+<section id="hrayonline">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Ігрова кімната</h2>
+      <p>Чотири гри за мотивами розділу «Натхнення» — грай прямо на сайті! Тренуємо кодування, алгоритми та швидку лічбу.</p>
+    </div>
+    <div class="arcade">
+
+      <div class="arcade-panel">
+        <h3>🔢 Двійковий детектив</h3>
+        <p class="sub">Комп'ютер зашифрував слово нулями та одиницями. Розкодуй його за таблицею, натискаючи літери!</p>
+        <div class="bin-table" id="binTable" aria-label="Таблиця кодів"></div>
+        <div class="bin-word" id="binWord"></div>
+        <p class="bin-answer" id="binAnswer" aria-live="polite">&nbsp;</p>
+        <div class="bin-keys" id="binKeys"></div>
+        <div class="a-row">
+          <button class="a-btn" id="binBack">⌫ Стерти</button>
+          <button class="a-btn primary" id="binNew">Нове слово</button>
+          <span class="a-score" id="binScore">Розгадано: 0</span>
+        </div>
+        <p class="a-status" id="binStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="arcade-panel">
+        <h3>🏴‍☠️ Піратський корабель</h3>
+        <p class="sub">Склади програму зі стрілок і натисни «Виконати» — корабель попливе точно за твоїм алгоритмом до скарбу!</p>
+        <div class="grid-board" id="seaBoard" style="grid-template-columns:repeat(6,1fr)" aria-label="Морське поле"></div>
+        <div class="pirate-cmds" id="seaCmds" aria-live="polite"></div>
+        <div class="a-row dpad">
+          <button data-d="up" aria-label="Вгору">⬆️</button>
+          <button data-d="down" aria-label="Вниз">⬇️</button>
+          <button data-d="left" aria-label="Ліворуч">⬅️</button>
+          <button data-d="right" aria-label="Праворуч">➡️</button>
+        </div>
+        <div class="a-row">
+          <button class="a-btn primary" id="seaRun">▶ Виконати</button>
+          <button class="a-btn" id="seaClear">Очистити</button>
+          <button class="a-btn" id="seaNew">Нова карта</button>
+        </div>
+        <p class="a-status" id="seaStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="arcade-panel">
+        <h3>🎨 Мозаїка за кодом</h3>
+        <p class="sub">Прочитай код і зафарбуй потрібні клітинки — натискай на них. Що за малюнок зашифровано?</p>
+        <div class="code-lines" id="mosCode"></div>
+        <div class="grid-board paintable" id="mosBoard" style="grid-template-columns:repeat(6,1fr)" aria-label="Поле мозаїки"></div>
+        <div class="a-row">
+          <button class="a-btn primary" id="mosCheck">Перевірити</button>
+          <button class="a-btn" id="mosReset">Очистити</button>
+          <button class="a-btn" id="mosNew">Нова картинка</button>
+        </div>
+        <p class="a-status" id="mosStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="arcade-panel">
+        <h3>✖️ Швидке множення</h3>
+        <p class="sub">Скільки прикладів встигнеш розв'язати за 60 секунд? Натисни «Старт» — і вперед!</p>
+        <p class="mul-q" id="mulQ">7 × 8 = ?</p>
+        <div class="a-row">
+          <input class="mul-input" id="mulInput" type="number" inputmode="numeric" aria-label="Твоя відповідь" disabled>
+          <button class="a-btn primary" id="mulGo">Старт</button>
+        </div>
+        <div class="a-row">
+          <span class="a-score" id="mulTime">⏱ 60 с</span>
+          <span class="a-score" id="mulScore">Рахунок: 0</span>
+        </div>
+        <p class="a-status" id="mulStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="arcade-panel">
+        <h3>🔐 Шифрувальник</h3>
+        <p class="sub">Слово зашифровано: кожну літеру зсунуто на одну вперед за абеткою (Б означає А, В — Б…). Розшифруй і впиши відповідь!</p>
+        <p class="mul-q" id="ciphWord" style="font-size:26px;letter-spacing:.12em"></p>
+        <div class="a-row">
+          <input class="mul-input" id="ciphInput" type="text" style="width:200px;text-transform:uppercase" aria-label="Розшифроване слово" autocomplete="off">
+          <button class="a-btn primary" id="ciphCheck">Перевірити</button>
+        </div>
+        <div class="a-row">
+          <button class="a-btn" id="ciphNew">Нове слово</button>
+          <span class="a-score" id="ciphScore">Розшифровано: 0</span>
+        </div>
+        <p class="a-status" id="ciphStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="arcade-panel">
+        <h3>🤖 Збери алгоритм</h3>
+        <p class="sub">Кроки алгоритму переплуталися! Натискай їх у правильному порядку — від першого до останнього.</p>
+        <p class="a-score" id="algTitle" style="font-weight:800;font-size:15px;color:var(--ink)"></p>
+        <div class="code-lines" id="algDone" style="min-height:30px"></div>
+        <div class="a-row" id="algPool" style="align-items:stretch;flex-direction:column;gap:8px"></div>
+        <div class="a-row">
+          <button class="a-btn" id="algRetry">Почати спочатку</button>
+          <button class="a-btn primary" id="algNew">Інший алгоритм</button>
+        </div>
+        <p class="a-status" id="algStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="arcade-panel">
+        <h3>📁 Файловий майстер</h3>
+        <p class="sub">Комп'ютер отримав купу файлів! Подивися на розширення після крапки та відправ кожен файл у правильну папку.</p>
+        <p class="mul-q" id="filFile" style="font-size:24px"></p>
+        <div class="a-row">
+          <button class="a-btn" data-f="img">🖼 Зображення</button>
+          <button class="a-btn" data-f="txt">📄 Тексти</button>
+          <button class="a-btn" data-f="mus">🎵 Музика</button>
+        </div>
+        <div class="a-row">
+          <span class="a-score" id="filProgress">Файл 1 із 10</span>
+          <span class="a-score" id="filScore">Правильно: 0</span>
+        </div>
+        <p class="a-status" id="filStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="arcade-panel">
+        <h3>💡 Істина чи хиба</h3>
+        <p class="sub">Прочитай висловлювання і виріши: це правда чи ні? Так тренуються справжні програмісти — у розділі V це знадобиться!</p>
+        <p class="mul-q" id="logQ" style="font-size:19px;line-height:1.4"></p>
+        <div class="a-row">
+          <button class="a-btn primary" id="logTrue">✔ Істина</button>
+          <button class="a-btn" id="logFalse">✘ Хиба</button>
+        </div>
+        <div class="a-row">
+          <span class="a-score" id="logProgress"></span>
+          <span class="a-score" id="logScore">Рахунок: 0</span>
+        </div>
+        <p class="a-status" id="logStatus" aria-live="polite"></p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1066,6 +1382,445 @@ function renderResult() {
 }
 
 renderQuestion();
+
+// Міні-вікторини «Перевір себе» за розділами
+const MQ = {
+  1: [
+    { q:'Що з переліченого — програма для онлайн-спілкування?', o:['Месенджер','Калькулятор','Ліхтарик','Будильник'], ok:0 },
+    { q:'Що обов\u02bcязково вказують, надсилаючи електронного листа?', o:['Свій пароль','Тему листа','Домашню адресу','Нічого'], ok:1 },
+    { q:'Який пароль найнадійніший?', o:['1234','пароль','t7kMp2','твоє ім\u02bcя'], ok:2 },
+    { q:'Незнайомець у мережі просить твоє фото та адресу. Що зробиш?', o:['Надішлю','Спитаю навіщо','Дам лише адресу','Не відповім і розкажу дорослим'], ok:3 }
+  ],
+  2: [
+    { q:'Як перевірити, чи правдива інформація?', o:['Порівняти кілька джерел','Повірити першому сайту','Спитати в кота','Ніяк не перевірити'], ok:0 },
+    { q:'Ти використав чуже фото у своїй роботі. Що треба зробити?', o:['Нічого','Вказати автора фото','Сказати, що воно моє','Сховати роботу'], ok:1 },
+    { q:'Що таке форматування тексту?', o:['Виправлення помилок','Видалення тексту','Зміна вигляду: шрифт, розмір, колір','Друк на папері'], ok:2 },
+    { q:'Коли потрібен нумерований список?', o:['Ніколи','Лише для краси','Для малюнків','Коли важливий порядок кроків'], ok:3 }
+  ],
+  3: [
+    { q:'Що можна зробити на онлайн-карті?', o:['Прокласти маршрут','Надрукувати гроші','Зварити борщ','Пограти у футбол'], ok:0 },
+    { q:'Що таке колаж?', o:['Довгий текст','Зображення, складене з кількох','Пісня','Таблиця з числами'], ok:1 },
+    { q:'Який пристрій називають «мозком» комп\u02bcютера?', o:['Мишу','Динамік','Процесор','Кабель'], ok:2 },
+    { q:'Віртуальна екскурсія — це…', o:['Поїздка автобусом','Урок фізкультури','Похід у гори','Подорож через інтернет, не виходячи з дому'], ok:3 }
+  ],
+  4: [
+    { q:'З чого складається двійковий код?', o:['З нулів та одиниць','З літер','З малюнків','З нот'], ok:0 },
+    { q:'Як найшвидше знайти файл на комп\u02bcютері?', o:['Переглянути всі папки підряд','Скористатися пошуком за назвою','Вимкнути комп\u02bcютер','Спитати у принтера'], ok:1 },
+    { q:'Телефон, який отримує повідомлення, — це…', o:['Джерело','Кодування','Приймач','Алгоритм'], ok:2 },
+    { q:'Де зручно розмістити розклад уроків?', o:['В одному довгому реченні','У пісні','На стелі','У таблиці'], ok:3 }
+  ],
+  5: [
+    { q:'Глобус — це модель…', o:['Землі','Сонця','Кавуна','М\u02bcяча'], ok:0 },
+    { q:'Як наочно показати, який фрукт найулюбленіший у класі?', o:['Довгим текстом','Діаграмою','Шепотом','Ніяк'], ok:1 },
+    { q:'Що таке модель?', o:['Точна копія об\u02bcєкта','Будь-яка іграшка','Спрощене подання об\u02bcєкта з головними ознаками','Фотографія'], ok:2 },
+    { q:'У таблиці записано витрати на ярмарок. Що можна обчислити?', o:['Погоду','Настрій','Колір','Загальну суму витрат'], ok:3 }
+  ],
+  6: [
+    { q:'Що таке алгоритм?', o:['Послідовність команд','Малюнок','Комп\u02bcютерна гра','Пароль'], ok:0 },
+    { q:'«Якщо дощ — бери парасольку» — це алгоритм з…', o:['Повторенням','Розгалуженням','Музикою','Таблицею'], ok:1 },
+    { q:'«Повтори 5 разів: присядь» — це алгоритм з…', o:['Розгалуженням','Моделлю','Повторенням','Кодуванням'], ok:2 },
+    { q:'Яке висловлювання істинне?', o:['Кіт — це риба','Улітку постійно йде сніг','2 + 2 = 5','У тижні сім днів'], ok:3 }
+  ]
+};
+
+document.querySelectorAll('.miniquiz').forEach(box => {
+  const qs = MQ[box.dataset.mq];
+  let qi = 0, score = 0;
+  function show() {
+    const item = qs[qi];
+    box.innerHTML = `
+      <p class="mq-progress">Запитання ${qi+1} із ${qs.length}</p>
+      <p class="mq-q">${item.q}</p>
+      <div class="quiz-opts">${item.o.map((o,i)=>`<button class="quiz-opt" data-i="${i}">${o}</button>`).join('')}</div>
+      <p class="quiz-feedback" role="status"></p>
+      <button class="btn btn-primary mq-next" hidden>Далі</button>
+    `;
+    const fb = box.querySelector('.quiz-feedback');
+    const nextBtn = box.querySelector('.mq-next');
+    box.querySelectorAll('.quiz-opt').forEach(b => b.addEventListener('click', () => {
+      box.querySelectorAll('.quiz-opt').forEach(x => x.disabled = true);
+      if (+b.dataset.i === item.ok) {
+        b.classList.add('correct'); score++;
+        fb.textContent = 'Правильно! 👍'; fb.className = 'quiz-feedback ok';
+      } else {
+        b.classList.add('wrong');
+        box.querySelector(`.quiz-opt[data-i="${item.ok}"]`).classList.add('correct');
+        fb.textContent = 'Не зовсім — правильна відповідь підсвічена зеленим.'; fb.className = 'quiz-feedback no';
+      }
+      nextBtn.hidden = false;
+      nextBtn.textContent = qi === qs.length - 1 ? 'Результат' : 'Далі';
+    }));
+    nextBtn.addEventListener('click', () => {
+      qi++;
+      if (qi < qs.length) show(); else result();
+    });
+  }
+  function result() {
+    const msg = score === qs.length ? 'Розділ засвоєно бездоганно! 🏆'
+      : score >= qs.length - 1 ? 'Дуже добре! Майже ідеально. 💪'
+      : score >= 2 ? 'Непогано! Переглянь уроки розділу і спробуй ще.'
+      : 'Варто повторити розділ — і все вийде!';
+    box.innerHTML = `
+      <div class="mq-result">
+        <p class="big">${score} / ${qs.length}</p>
+        <p style="font-weight:800;margin-bottom:10px">${msg}</p>
+        <button class="btn btn-primary mq-again">Пройти ще раз</button>
+      </div>`;
+    box.querySelector('.mq-again').addEventListener('click', () => { qi = 0; score = 0; show(); });
+  }
+  show();
+});
+
+/* ===== ІГРОВА КІМНАТА ===== */
+
+// 1. Двійковий детектив
+(() => {
+  const CODES = { 'А':'000','І':'001','К':'010','Л':'011','Н':'100','О':'101','С':'110','Т':'111' };
+  const WORDS = ['КІТ','ЛІС','СОН','НІС','СІК','КІНО','НОТА','САНІ','ЛОТО','ТІСТО'];
+  const tableEl = document.getElementById('binTable');
+  const wordEl = document.getElementById('binWord');
+  const ansEl = document.getElementById('binAnswer');
+  const keysEl = document.getElementById('binKeys');
+  const statusEl = document.getElementById('binStatus');
+  const scoreEl = document.getElementById('binScore');
+  let target = '', typed = '', solved = 0;
+
+  tableEl.innerHTML = Object.entries(CODES).map(([l,c]) => `<span>${l} = ${c}</span>`).join('');
+  keysEl.innerHTML = Object.keys(CODES).map(l => `<button type="button" data-l="${l}">${l}</button>`).join('');
+
+  function newWord() {
+    let w; do { w = WORDS[Math.floor(Math.random()*WORDS.length)]; } while (w === target);
+    target = w; typed = '';
+    wordEl.innerHTML = [...target].map(l => `<span class="bin-chip">${CODES[l]}</span>`).join('');
+    ansEl.textContent = '\u00A0'; statusEl.textContent = ''; statusEl.className = 'a-status';
+  }
+  function render() { ansEl.textContent = typed || '\u00A0'; }
+  keysEl.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || typed.length >= target.length) return;
+    typed += b.dataset.l; render();
+    if (typed.length === target.length) {
+      if (typed === target) {
+        solved++; scoreEl.textContent = 'Розгадано: ' + solved;
+        statusEl.textContent = 'Так! Це слово «' + target + '» 🎉'; statusEl.className = 'a-status ok';
+        setTimeout(newWord, 1600);
+      } else {
+        statusEl.textContent = 'Не збігається. Звір коди з таблицею і спробуй ще!'; statusEl.className = 'a-status no';
+      }
+    }
+  });
+  document.getElementById('binBack').addEventListener('click', () => { typed = typed.slice(0,-1); statusEl.textContent=''; statusEl.className='a-status'; render(); });
+  document.getElementById('binNew').addEventListener('click', newWord);
+  newWord();
+})();
+
+// 2. Піратський корабель
+(() => {
+  const N = 6;
+  const board = document.getElementById('seaBoard');
+  const cmdsEl = document.getElementById('seaCmds');
+  const statusEl = document.getElementById('seaStatus');
+  const ARROWS = { up:'⬆️', down:'⬇️', left:'⬅️', right:'➡️' };
+  let ship, treasure, cmds = [], running = false;
+
+  function newMap() {
+    ship = { r:0, c:0 };
+    do { treasure = { r: Math.floor(Math.random()*N), c: Math.floor(Math.random()*N) }; }
+    while (treasure.r + treasure.c < 3);
+    cmds = []; running = false;
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+    draw();
+  }
+  function draw() {
+    let html = '';
+    for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
+      let icon = '';
+      if (ship.r === r && ship.c === c) icon = '🚢';
+      else if (treasure.r === r && treasure.c === c) icon = '💰';
+      html += `<div class="cell">${icon}</div>`;
+    }
+    board.innerHTML = html;
+    cmdsEl.textContent = cmds.map(d => ARROWS[d]).join(' ');
+  }
+  document.querySelectorAll('.dpad button').forEach(b => b.addEventListener('click', () => {
+    if (running || cmds.length >= 15) return;
+    cmds.push(b.dataset.d); draw();
+  }));
+  document.getElementById('seaClear').addEventListener('click', () => { if (!running) { cmds = []; ship = {r:0,c:0}; statusEl.textContent=''; statusEl.className='a-status'; draw(); } });
+  document.getElementById('seaNew').addEventListener('click', () => { if (!running) newMap(); });
+  document.getElementById('seaRun').addEventListener('click', () => {
+    if (running || !cmds.length) return;
+    running = true; ship = { r:0, c:0 }; draw();
+    const queue = [...cmds];
+    const timer = setInterval(() => {
+      const d = queue.shift();
+      if (d === 'up') ship.r = Math.max(0, ship.r - 1);
+      if (d === 'down') ship.r = Math.min(N-1, ship.r + 1);
+      if (d === 'left') ship.c = Math.max(0, ship.c - 1);
+      if (d === 'right') ship.c = Math.min(N-1, ship.c + 1);
+      draw();
+      if (!queue.length) {
+        clearInterval(timer); running = false;
+        if (ship.r === treasure.r && ship.c === treasure.c) {
+          statusEl.textContent = 'Скарб знайдено! Твій алгоритм працює! 🏴‍☠️🎉'; statusEl.className = 'a-status ok';
+        } else {
+          statusEl.textContent = 'Корабель зупинився не там. Зміни програму і спробуй ще!'; statusEl.className = 'a-status no';
+        }
+      }
+    }, 420);
+  });
+  newMap();
+})();
+
+// 3. Мозаїка за кодом
+(() => {
+  const N = 6;
+  const PATTERNS = [
+    { name:'сердечко', cells:[[0,1],[0,2],[0,4],[0,5],[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[2,0],[2,1],[2,2],[2,3],[2,4],[2,5],[3,1],[3,2],[3,3],[3,4],[4,2],[4,3]] },
+    { name:'будиночок', cells:[[0,2],[0,3],[1,1],[1,2],[1,3],[1,4],[2,0],[2,1],[2,2],[2,3],[2,4],[2,5],[3,1],[3,2],[3,3],[3,4],[4,1],[4,2],[4,3],[4,4],[5,1],[5,2],[5,3],[5,4]] },
+    { name:'ялинка', cells:[[0,2],[0,3],[1,1],[1,2],[1,3],[1,4],[2,2],[2,3],[3,1],[3,2],[3,3],[3,4],[4,0],[4,1],[4,2],[4,3],[4,4],[4,5],[5,2],[5,3]] },
+    { name:'літера Т', cells:[[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[1,3],[2,2],[2,3],[3,2],[3,3],[4,2],[4,3],[5,2],[5,3]] }
+  ];
+  const board = document.getElementById('mosBoard');
+  const codeEl = document.getElementById('mosCode');
+  const statusEl = document.getElementById('mosStatus');
+  let idx = -1, painted;
+
+  function newPattern() {
+    idx = (idx + 1) % PATTERNS.length;
+    painted = new Set();
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+    const rows = {};
+    PATTERNS[idx].cells.forEach(([r,c]) => { (rows[r] = rows[r] || []).push(c + 1); });
+    codeEl.innerHTML = Object.keys(rows).sort((a,b)=>a-b)
+      .map(r => `<span>Рядок ${+r+1}: клітинки ${rows[r].sort((a,b)=>a-b).join(', ')}</span>`).join('');
+    board.innerHTML = Array.from({length: N*N}, (_,i) => `<div class="cell" data-i="${i}"></div>`).join('');
+  }
+  board.addEventListener('click', e => {
+    const cell = e.target.closest('.cell'); if (!cell) return;
+    const i = +cell.dataset.i;
+    if (painted.has(i)) { painted.delete(i); cell.classList.remove('paint'); }
+    else { painted.add(i); cell.classList.add('paint'); }
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+  });
+  document.getElementById('mosCheck').addEventListener('click', () => {
+    const targetSet = new Set(PATTERNS[idx].cells.map(([r,c]) => r*N + c));
+    const same = painted.size === targetSet.size && [...painted].every(i => targetSet.has(i));
+    if (same) { statusEl.textContent = 'Точно за кодом! Це ' + PATTERNS[idx].name + '! 🎉'; statusEl.className = 'a-status ok'; }
+    else { statusEl.textContent = 'Ще не збігається. Перевір рядки за кодом уважніше!'; statusEl.className = 'a-status no'; }
+  });
+  document.getElementById('mosReset').addEventListener('click', () => {
+    painted.clear();
+    board.querySelectorAll('.cell').forEach(c => c.classList.remove('paint'));
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+  });
+  document.getElementById('mosNew').addEventListener('click', newPattern);
+  newPattern();
+})();
+
+// 4. Швидке множення
+(() => {
+  const qEl = document.getElementById('mulQ');
+  const input = document.getElementById('mulInput');
+  const goBtn = document.getElementById('mulGo');
+  const timeEl = document.getElementById('mulTime');
+  const scoreEl = document.getElementById('mulScore');
+  const statusEl = document.getElementById('mulStatus');
+  let a, b, score = 0, timeLeft = 60, timer = null, playing = false;
+
+  function nextQ() {
+    a = 2 + Math.floor(Math.random()*8);
+    b = 2 + Math.floor(Math.random()*8);
+    qEl.textContent = a + ' × ' + b + ' = ?';
+    input.value = ''; input.focus();
+  }
+  function finish() {
+    clearInterval(timer); playing = false;
+    input.disabled = true; goBtn.textContent = 'Ще раз';
+    const msg = score >= 20 ? 'Блискавична швидкість! ⚡' : score >= 12 ? 'Дуже добре! 💪' : score >= 6 ? 'Гарний старт — потренуйся ще!' : 'Спробуй ще раз — вийде краще!';
+    statusEl.textContent = 'Час вийшов! Твій результат: ' + score + '. ' + msg;
+    statusEl.className = 'a-status ok';
+  }
+  goBtn.addEventListener('click', () => {
+    if (playing) return;
+    score = 0; timeLeft = 60; playing = true;
+    scoreEl.textContent = 'Рахунок: 0'; timeEl.textContent = '⏱ 60 с';
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+    input.disabled = false; goBtn.textContent = 'Гра триває…';
+    nextQ();
+    timer = setInterval(() => {
+      timeLeft--; timeEl.textContent = '⏱ ' + timeLeft + ' с';
+      if (timeLeft <= 0) finish();
+    }, 1000);
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' || !playing) return;
+    if (+input.value === a * b) { score++; scoreEl.textContent = 'Рахунок: ' + score; nextQ(); }
+    else { input.value = ''; qEl.textContent = a + ' × ' + b + ' = ?  (спробуй ще)'; }
+  });
+})();
+
+// 5. Шифрувальник (зсув абетки на +1)
+(() => {
+  const ABC = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ';
+  const WORDS = ['ШКОЛА','ЗОШИТ','УРОК','КНИГА','ДРУЗІ','ЛІТО','СОНЦЕ','МИША','ЕКРАН','ПАРОЛЬ','ПАПКА','ФАЙЛ'];
+  const wordEl = document.getElementById('ciphWord');
+  const input = document.getElementById('ciphInput');
+  const statusEl = document.getElementById('ciphStatus');
+  const scoreEl = document.getElementById('ciphScore');
+  let target = '', solved = 0;
+  const enc = w => [...w].map(l => { const i = ABC.indexOf(l); return i < 0 ? l : ABC[(i + 1) % ABC.length]; }).join('');
+  function newWord() {
+    let w; do { w = WORDS[Math.floor(Math.random()*WORDS.length)]; } while (w === target);
+    target = w; wordEl.textContent = enc(w);
+    input.value = ''; statusEl.textContent = ''; statusEl.className = 'a-status';
+  }
+  function check() {
+    if (input.value.trim().toUpperCase() === target) {
+      solved++; scoreEl.textContent = 'Розшифровано: ' + solved;
+      statusEl.textContent = 'Так! Це слово «' + target + '» 🔓🎉'; statusEl.className = 'a-status ok';
+      setTimeout(newWord, 1600);
+    } else {
+      statusEl.textContent = 'Ще ні. Підказка: кожна літера шифру — це НАСТУПНА після справжньої.'; statusEl.className = 'a-status no';
+    }
+  }
+  document.getElementById('ciphCheck').addEventListener('click', check);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') check(); });
+  document.getElementById('ciphNew').addEventListener('click', newWord);
+  newWord();
+})();
+
+// 6. Збери алгоритм
+(() => {
+  const ALGOS = [
+    { title:'Посади квітку', steps:['Викопай ямку','Поклади насінину','Присип землею','Полий водою','Чекай на паросток'] },
+    { title:'Надішли електронного листа', steps:['Відкрий пошту','Натисни «Написати»','Вкажи адресу і тему','Напиши текст листа','Натисни «Надіслати»'] },
+    { title:'Збережи малюнок на комп\u02bcютері', steps:['Намалюй малюнок','Натисни «Файл»','Обери «Зберегти»','Введи назву файлу','Натисни «ОК»'] },
+    { title:'Приготуй чай', steps:['Закип\u02bcяти воду','Поклади пакетик у чашку','Налий окріп','Зачекай три хвилини','Дістань пакетик'] }
+  ];
+  const titleEl = document.getElementById('algTitle');
+  const doneEl = document.getElementById('algDone');
+  const poolEl = document.getElementById('algPool');
+  const statusEl = document.getElementById('algStatus');
+  let idx = -1, next = 0, order = [];
+  function shuffle(a) { for (let i = a.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+  function render() {
+    const algo = ALGOS[idx];
+    titleEl.textContent = 'Алгоритм: «' + algo.title + '»';
+    doneEl.innerHTML = algo.steps.slice(0, next).map((s,i) => `<span>${i+1}. ${s} ✔</span>`).join('') || '<span style="color:var(--ink-soft)">Тут з\u02bcявляться кроки по порядку…</span>';
+    poolEl.innerHTML = order.filter(s => algo.steps.indexOf(s) >= next)
+      .map(s => `<button class="a-btn" data-s="${s}" style="text-align:left">${s}</button>`).join('');
+  }
+  function newAlgo() {
+    idx = (idx + 1) % ALGOS.length; next = 0;
+    order = shuffle([...ALGOS[idx].steps]);
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+    render();
+  }
+  poolEl.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const algo = ALGOS[idx];
+    if (b.dataset.s === algo.steps[next]) {
+      next++; statusEl.textContent = ''; statusEl.className = 'a-status';
+      render();
+      if (next === algo.steps.length) {
+        statusEl.textContent = 'Алгоритм зібрано правильно! Ти мислиш як програміст! 🤖🎉';
+        statusEl.className = 'a-status ok';
+      }
+    } else {
+      statusEl.textContent = 'Цей крок ще зарано. Подумай, що має відбутися раніше!';
+      statusEl.className = 'a-status no';
+    }
+  });
+  document.getElementById('algRetry').addEventListener('click', () => { next = 0; order = shuffle([...ALGOS[idx].steps]); statusEl.textContent=''; statusEl.className='a-status'; render(); });
+  document.getElementById('algNew').addEventListener('click', newAlgo);
+  newAlgo();
+})();
+
+// 7. Файловий майстер
+(() => {
+  const FILES = [
+    ['котик.jpg','img'],['вірш.txt','txt'],['пісня.mp3','mus'],['канікули.png','img'],
+    ['казка.docx','txt'],['мелодія.mp3','mus'],['квіти.jpg','img'],['твір.docx','txt'],
+    ['дзвіночок.mp3','mus'],['малюнок.png','img'],['лист.txt','txt'],['гімн.mp3','mus']
+  ];
+  const ICONS = { img:'🖼 Зображення', txt:'📄 Тексти', mus:'🎵 Музика' };
+  const fileEl = document.getElementById('filFile');
+  const progEl = document.getElementById('filProgress');
+  const scoreEl = document.getElementById('filScore');
+  const statusEl = document.getElementById('filStatus');
+  const btns = document.querySelectorAll('#hrayonline [data-f]');
+  let round = [], i = 0, score = 0;
+  function shuffle(a) { for (let k = a.length-1; k > 0; k--) { const j = Math.floor(Math.random()*(k+1)); [a[k],a[j]]=[a[j],a[k]]; } return a; }
+  function start() {
+    round = shuffle([...FILES]).slice(0, 10); i = 0; score = 0;
+    scoreEl.textContent = 'Правильно: 0';
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+    show();
+  }
+  function show() {
+    progEl.textContent = 'Файл ' + (i+1) + ' із 10';
+    fileEl.textContent = '📎 ' + round[i][0];
+  }
+  btns.forEach(b => b.addEventListener('click', () => {
+    if (i >= round.length) { start(); return; }
+    const correct = round[i][1];
+    if (b.dataset.f === correct) { score++; scoreEl.textContent = 'Правильно: ' + score; statusEl.textContent = 'Так, це папка «' + ICONS[correct] + '»!'; statusEl.className = 'a-status ok'; }
+    else { statusEl.textContent = 'Ой! «' + round[i][0] + '» належить до папки «' + ICONS[correct] + '». Дивись на розширення після крапки!'; statusEl.className = 'a-status no'; }
+    i++;
+    if (i < round.length) show();
+    else {
+      fileEl.textContent = '🏁 Готово!';
+      progEl.textContent = 'Раунд завершено';
+      statusEl.textContent = 'Твій результат: ' + score + ' із 10. ' + (score === 10 ? 'Ідеальний порядок у файлах! 🏆' : score >= 7 ? 'Дуже добре! 💪' : 'Потренуйся ще — натисни будь-яку папку для нового раунду!');
+      statusEl.className = 'a-status ok';
+    }
+  }));
+  start();
+})();
+
+// 8. Істина чи хиба
+(() => {
+  const ITEMS = [
+    ['У тижні сім днів', true], ['Кіт — це птах', false],
+    ['Комп\u02bcютер працює без електрики', false], ['Київ — столиця України', true],
+    ['У року десять місяців', false], ['Двійковий код складається з нулів та одиниць', true],
+    ['Алгоритм — це послідовність команд', true], ['Пароль треба повідомляти всім друзям', false],
+    ['Миша — пристрій для керування комп\u02bcютером', true], ['Файли зберігають у папках', true],
+    ['Принтер друкує на папері', true], ['Улітку в Україні випадає багато снігу', false]
+  ];
+  const qEl = document.getElementById('logQ');
+  const progEl = document.getElementById('logProgress');
+  const scoreEl = document.getElementById('logScore');
+  const statusEl = document.getElementById('logStatus');
+  let round = [], i = 0, score = 0;
+  function shuffle(a) { for (let k = a.length-1; k > 0; k--) { const j = Math.floor(Math.random()*(k+1)); [a[k],a[j]]=[a[j],a[k]]; } return a; }
+  function start() {
+    round = shuffle([...ITEMS]).slice(0, 8); i = 0; score = 0;
+    scoreEl.textContent = 'Рахунок: 0';
+    statusEl.textContent = ''; statusEl.className = 'a-status';
+    show();
+  }
+  function show() {
+    progEl.textContent = 'Висловлювання ' + (i+1) + ' із 8';
+    qEl.textContent = '«' + round[i][0] + '»';
+  }
+  function answer(val) {
+    if (i >= round.length) { start(); return; }
+    if (val === round[i][1]) { score++; scoreEl.textContent = 'Рахунок: ' + score; statusEl.textContent = 'Правильно!'; statusEl.className = 'a-status ok'; }
+    else { statusEl.textContent = 'Ні, це ' + (round[i][1] ? 'істина' : 'хиба') + '.'; statusEl.className = 'a-status no'; }
+    i++;
+    if (i < round.length) show();
+    else {
+      qEl.textContent = '🏁';
+      progEl.textContent = 'Раунд завершено';
+      statusEl.textContent = 'Результат: ' + score + ' із 8. ' + (score === 8 ? 'Бездоганна логіка! 🏆' : score >= 6 ? 'Чудово міркуєш! 💪' : 'Натисни будь-яку кнопку і спробуй ще!');
+      statusEl.className = 'a-status ok';
+    }
+  }
+  document.getElementById('logTrue').addEventListener('click', () => answer(true));
+  document.getElementById('logFalse').addEventListener('click', () => answer(false));
+  start();
+})();
 </script>
 </body>
 </html>

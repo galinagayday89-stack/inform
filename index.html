@@ -175,17 +175,40 @@ h2{
 .chev svg{stroke:var(--ink-soft);stroke-width:2.5;fill:none;width:100%;height:100%}
 details[open] .chev{transform:rotate(180deg)}
 .lessons{list-style:none;padding:4px 22px 22px 22px}
-.lessons li{
-  display:flex;gap:12px;align-items:baseline;padding:9px 0;border-top:1px dashed var(--line);
-  font-size:15.5px;
-}
+.lessons li{border-top:1px dashed var(--line);font-size:15.5px}
 .lessons li:first-child{border-top:none}
+.lessons li.check,.lessons li.plain{display:flex;gap:12px;align-items:baseline;padding:9px 0}
 .num{
   flex:none;min-width:34px;text-align:center;font-family:var(--font-mono);
   font-weight:700;font-size:13px;border-radius:8px;padding:3px 6px;
 }
 .lessons .page{margin-left:auto;color:var(--ink-soft);font-family:var(--font-mono);font-size:12.5px;flex:none}
 .lessons li.check{font-weight:800;letter-spacing:.02em}
+.lessons details summary{
+  list-style:none;cursor:pointer;display:flex;gap:12px;align-items:baseline;
+  padding:10px 0;font-size:15.5px;
+}
+.lessons details summary::-webkit-details-marker{display:none}
+.lessons details summary:hover{color:var(--brand-dark)}
+.lessons details summary .hint{
+  margin-left:auto;flex:none;display:flex;align-items:center;gap:8px;
+  color:var(--ink-soft);font-family:var(--font-mono);font-size:12.5px;
+}
+.lessons details summary .hint::after{content:"▾";font-size:11px;transition:transform .2s ease}
+.lessons details[open] summary .hint::after{transform:rotate(180deg)}
+.tasks{list-style:none;margin:2px 0 14px 46px;display:grid;gap:8px}
+@media (max-width:600px){.tasks{margin-left:0}}
+.tasks li{
+  font-size:14.5px;color:var(--ink);background:var(--bg);
+  border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;
+}
+.t-tag{
+  flex:none;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  padding:4px 9px;border-radius:99px;margin-top:2px;
+}
+.t-oral{background:var(--c4-soft);color:var(--c4)}
+.t-prac{background:var(--c3-soft);color:var(--c3)}
+.t-creative{background:var(--c6-soft);color:var(--c6)}
 .ch1 .rome{background:var(--c1)} .ch1 .num{background:var(--c1-soft);color:var(--c1)} .ch1 li.check{color:var(--c1)}
 .ch2 .rome{background:var(--c2)} .ch2 .num{background:var(--c2-soft);color:var(--c2)} .ch2 li.check{color:var(--c2)}
 .ch3 .rome{background:var(--c3)} .ch3 .num{background:var(--c3-soft);color:var(--c3)} .ch3 li.check{color:var(--c3)}
@@ -349,7 +372,7 @@ footer b{color:var(--ink)}
   <div class="container">
     <div class="sec-head">
       <h2>Розділи підручника</h2>
-      <p>Натисни на розділ, щоб побачити всі його уроки і сторінки. Рубрика «Перевір себе» завершує кожен розділ — це підсумок вивченого.</p>
+      <p>Натисни на розділ, щоб побачити уроки, а на урок — щоб відкрити завдання до нього: усні, практичні та творчі. Сторінка поруч підкаже, де читати теорію в підручнику.</p>
     </div>
     <div class="chapters">
 
@@ -360,10 +383,38 @@ footer b{color:var(--ink)}
           <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
         <ul class="lessons">
-          <li><span class="num">1</span>Спілкуємось електронно<span class="page">с. 6</span></li>
-          <li><span class="num">2</span>Програми для онлайн-спілкування<span class="page">с. 9</span></li>
-          <li><span class="num">3</span>Створюємо та відсилаємо листи<span class="page">с. 12</span></li>
-          <li><span class="num">4</span>Моя інтернет-безпека<span class="page">с. 16</span></li>
+          <li><details>
+            <summary><span class="num">1</span>Спілкуємось електронно<span class="hint">с. 6 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Назви три способи електронного спілкування, якими користується твоя родина. Чим вони відрізняються?</li>
+              <li><span class="t-tag t-prac">Практично</span>Порівняй паперовий та електронний лист: заповни табличку «швидкість / вартість / що потрібно для надсилання».</li>
+              <li><span class="t-tag t-creative">Творчо</span>Розпитай бабусю чи дідуся, як вони спілкувалися на відстані в дитинстві, та підготуй коротку розповідь для класу.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">2</span>Програми для онлайн-спілкування<span class="hint">с. 9 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Які програми для спілкування ти знаєш? Розподіли їх на групи: для повідомлень і для відеодзвінків.</li>
+              <li><span class="t-tag t-prac">Практично</span>Обери програму для ситуації: привітати бабусю за кордоном, домовитися з другом про прогулянку, надіслати вчителю фото роботи. Поясни свій вибір.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Склади 5 правил ввічливої відеорозмови для свого класу.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">3</span>Створюємо та відсилаємо листи<span class="hint">с. 12 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Пригадай правила етикету електронного листування. Чому тему листа пишуть коротко та влучно?</li>
+              <li><span class="t-tag t-prac">Практично</span>Разом із дорослими надішли вчителю електронний лист: зазнач тему, привітайся, підпишись і додай доречний смайлик.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Напиши дружній лист казковому герою за всіма правилами етикету.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">4</span>Моя інтернет-безпека<span class="hint">с. 16 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Що не можна повідомляти незнайомцям у мережі? Склади список разом із сусідом по парті.</li>
+              <li><span class="t-tag t-prac">Практично</span>Придумай надійний пароль із 6–8 латинських літер і цифр. Запам'ятай або збережи його в надійному місці — і нікому не показуй.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Намалюй пам'ятку «Що робити, якщо надійшов підозрілий лист» із трьох кроків.</li>
+            </ul>
+          </details></li>
           <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 19</span></li>
         </ul>
       </details>
@@ -375,13 +426,62 @@ footer b{color:var(--ink)}
           <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
         <ul class="lessons">
-          <li><span class="num">5</span>Шукаємо інформацію для навчання<span class="page">с. 21</span></li>
-          <li><span class="num">6</span>Визначаємо достовірність інформації<span class="page">с. 24</span></li>
-          <li><span class="num">7</span>Співпрацюємо в мережі. Авторське право<span class="page">с. 27</span></li>
-          <li><span class="num">8</span>Створюємо текстові документи<span class="page">с. 30</span></li>
-          <li><span class="num">9</span>Вносимо правки і форматуємо текст<span class="page">с. 33</span></li>
-          <li><span class="num">10</span>Плануємо діяльність. Списки<span class="page">с. 36</span></li>
-          <li><span class="num">11</span>Такий важливий абзац<span class="page">с. 39</span></li>
+          <li><details>
+            <summary><span class="num">5</span>Шукаємо інформацію для навчання<span class="hint">с. 21 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>З чого складається вдалий пошуковий запит? Наведи приклад запиту про своє місто.</li>
+              <li><span class="t-tag t-prac">Практично</span>Знайди в інтернеті три цікаві факти про Черкащину. Порівняй, що видає пошук за коротким і за довгим запитом.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Влаштуйте змагання пар: хто швидше знайде відповідь на запитання вчителя, використавши найвлучніший запит.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">6</span>Визначаємо достовірність інформації<span class="hint">с. 24 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>За якими ознаками можна впізнати неправдиву новину? Назви щонайменше три.</li>
+              <li><span class="t-tag t-prac">Практично</span>Перевір один факт із мультфільму чи книжки у двох різних джерелах. Чи збігається інформація?</li>
+              <li><span class="t-tag t-creative">Творчо</span>Гра «Правда чи вигадка»: підготуй два правдиві факти й один вигаданий — нехай клас відгадає, де вигадка, і пояснить як.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">7</span>Співпрацюємо в мережі. Авторське право<span class="hint">с. 27 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Чому не можна видавати чужий малюнок або текст за свій? Як ти почуватимешся, якщо так вчинять із твоєю роботою?</li>
+              <li><span class="t-tag t-prac">Практично</span>Додай до своєї роботи підпис із джерелом: звідки взято зображення і хто його автор.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Разом із класом складіть «Кодекс чесного користувача мережі» з 5 правил.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">8</span>Створюємо текстові документи<span class="hint">с. 30 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Для чого людям текстовий редактор? Назви ситуації, коли він знадобиться школяру.</li>
+              <li><span class="t-tag t-prac">Практично</span>Створи новий документ, набери три речення про свій клас і збережи файл зі зрозумілою назвою.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Набери оголошення про шкільну подію — справжню або вигадану.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">9</span>Вносимо правки і форматуємо текст<span class="hint">с. 33 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Чим редагування відрізняється від форматування? Наведи по одному прикладу.</li>
+              <li><span class="t-tag t-prac">Практично</span>Виправ помилки в тексті від учителя, а потім виділи заголовок жирним і зміни його колір.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Оформи улюблену загадку так, щоб її було приємно читати: добери шрифт, розмір і колір.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">10</span>Плануємо діяльність. Списки<span class="hint">с. 36 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Коли зручніше маркований список, а коли нумерований? Поясни на прикладах.</li>
+              <li><span class="t-tag t-prac">Практично</span>Створи в документі маркований список «Мої справи на вихідні» та нумерований «Як приготувати мій улюблений бутерброд».</li>
+              <li><span class="t-tag t-creative">Творчо</span>Склади список-план підготовки до дня народження друга.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">11</span>Такий важливий абзац<span class="hint">с. 39 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Навіщо текст ділять на абзаци? Що станеться, якщо їх прибрати?</li>
+              <li><span class="t-tag t-prac">Практично</span>Поділи суцільний текст від учителя на абзаци — там, де починається нова думка.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Напиши коротку розповідь про свій день із трьох абзаців: ранок, школа, вечір.</li>
+            </ul>
+          </details></li>
           <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 42</span></li>
         </ul>
       </details>
@@ -393,12 +493,54 @@ footer b{color:var(--ink)}
           <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
         <ul class="lessons">
-          <li><span class="num">12</span>Мої віртуальні подорожі<span class="page">с. 44</span></li>
-          <li><span class="num">13</span>Позначаємо цікаві місця на карті<span class="page">с. 46</span></li>
-          <li><span class="num">14</span>Готуємо зображення до використання. Колаж зображень<span class="page">с. 48</span></li>
-          <li><span class="num">15</span>Розповідаємо цифрову історію своєї подорожі<span class="page">с. 51</span></li>
-          <li><span class="num">16</span>Незвичайна подорож: люди в історії цифрових пристроїв<span class="page">с. 53</span></li>
-          <li><span class="num">17</span>Подорож усередину комп’ютера<span class="page">с. 56</span></li>
+          <li><details>
+            <summary><span class="num">12</span>Мої віртуальні подорожі<span class="hint">с. 44 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Куди можна «поїхати», не виходячи з класу? Назви переваги віртуальної подорожі.</li>
+              <li><span class="t-tag t-prac">Практично</span>Здійсни віртуальну екскурсію українським музеєм або замком і запиши три найяскравіші враження.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Обери місце мрії та поясни класу, чому саме туди варто «помандрувати» наступного разу.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">13</span>Позначаємо цікаві місця на карті<span class="hint">с. 46 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Чим онлайн-карта зручніша за паперову? А коли паперова виручить краще?</li>
+              <li><span class="t-tag t-prac">Практично</span>Знайди на онлайн-карті свою школу та познач три улюблені місця свого міста чи села.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Проклади на карті маршрут «дім — школа» та порахуй, скільки хвилин він займає пішки.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">14</span>Готуємо зображення до використання. Колаж зображень<span class="hint">с. 48 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Що таке колаж? Де ти бачив колажі в житті?</li>
+              <li><span class="t-tag t-prac">Практично</span>Добери 4–5 зображень на одну тему, обріж зайве та склади з них колаж у графічному редакторі.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Створи колаж «Моя мрія» і придумай до нього назву.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">15</span>Розповідаємо цифрову історію своєї подорожі<span class="hint">с. 51 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>З чого складається хороша історія? Пригадай: початок, розвиток подій, завершення.</li>
+              <li><span class="t-tag t-prac">Практично</span>Склади цифрову історію своєї подорожі (справжньої чи віртуальної) з 5 зображень і коротких підписів.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Презентуй свою історію класу — 2 хвилини, як справжній блогер-мандрівник.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">16</span>Незвичайна подорож: люди в історії цифрових пристроїв<span class="hint">с. 53 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Як ти гадаєш, яким був перший комп'ютер? Порівняй свої здогадки з фактами з підручника.</li>
+              <li><span class="t-tag t-prac">Практично</span>Знайди інформацію про один винахід — комп'ютерну мишу, клавіатуру чи перший ноутбук — і підготуй три цікаві факти.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Уяви пристрій майбутнього та намалюй його. Що він умітиме?</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">17</span>Подорож усередину комп’ютера<span class="hint">с. 56 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Назви основні складові комп'ютера. Яка з них — його «мозок»?</li>
+              <li><span class="t-tag t-prac">Практично</span>Гра «Впізнай пристрій»: за описом сусіда по парті відгадай, про яку частину комп'ютера йдеться.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Намалюй схему комп'ютера і підпиши його частини, як на карті мандрівника.</li>
+            </ul>
+          </details></li>
           <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 58</span></li>
         </ul>
       </details>
@@ -410,16 +552,79 @@ footer b{color:var(--ink)}
           <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
         <ul class="lessons">
-          <li><span class="num">18</span>Інформація та дані. Шукаємо дані на комп’ютері<span class="page">с. 59</span></li>
-          <li><span class="num">19</span>Зберігаємо інформацію. Кодування<span class="page">с. 62</span></li>
-          <li><span class="num">20</span>Люди та пристрої. Передаємо дані<span class="page">с. 65</span></li>
-          <li><span class="num">21</span>Перетворюємо та опрацьовуємо інформацію<span class="page">с. 68</span></li>
-          <li><span class="num">22</span>Опрацьовуємо текстові дані в таблиці<span class="page">с. 70</span></li>
+          <li><details>
+            <summary><span class="num">18</span>Інформація та дані. Шукаємо дані на комп’ютері<span class="hint">с. 59 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Чим інформація відрізняється від даних? Наведи приклад із життя.</li>
+              <li><span class="t-tag t-prac">Практично</span>Знайди на комп'ютері файл за назвою за допомогою пошуку. Скільки часу це зайняло?</li>
+              <li><span class="t-tag t-creative">Творчо</span>Наведи лад у своїй папці: розклади файли за темами, як книжки на полицях.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">19</span>Зберігаємо інформацію. Кодування<span class="hint">с. 62 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Які способи кодування інформації ти знаєш? Де людям потрібні коди?</li>
+              <li><span class="t-tag t-prac">Практично</span>Закодуй своє ім'я умовними знаками або двійковим кодом і запропонуй другові розкодувати.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Придумай власну таємну абетку класу та зашифруй нею коротке побажання.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">20</span>Люди та пристрої. Передаємо дані<span class="hint">с. 65 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Який шлях долає повідомлення від твого телефона до телефона друга? Опиши крок за кроком.</li>
+              <li><span class="t-tag t-prac">Практично</span>Склади ланцюжок «джерело — канал — приймач» для трьох ситуацій: дзвінок, лист, радіопередача.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Гра «Зіпсований телефон» по-новому: передайте повідомлення жестами. Чи дійшло воно без змін?</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">21</span>Перетворюємо та опрацьовуємо інформацію<span class="hint">с. 68 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Як одну й ту саму інформацію можна подати по-різному? Наведи приклади: текст, малюнок, схема.</li>
+              <li><span class="t-tag t-prac">Практично</span>Перетвори коротке оповідання на схему або малюнок так, щоб зміст зберігся.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Подай свій розклад дня трьома способами: списком, малюнком і таблицею. Який зручніший?</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">22</span>Опрацьовуємо текстові дані в таблиці<span class="hint">с. 70 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Коли таблиця зручніша за звичайний текст? Де ти бачив таблиці у школі?</li>
+              <li><span class="t-tag t-prac">Практично</span>Створи в документі таблицю «Мій розклад уроків» на тиждень і заповни її.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Склади таблицю «Улюблені книжки нашої родини»: хто, яка книжка, чому подобається.</li>
+            </ul>
+          </details></li>
           <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 73</span></li>
-          <li><span class="num">23</span>Створюємо модель<span class="page">с. 74</span></li>
-          <li><span class="num">24</span>Подаємо числові дані в таблиці<span class="page">с. 75</span></li>
-          <li><span class="num">25</span>Подаємо дані графічно<span class="page">с. 77</span></li>
-          <li><span class="num">26</span>Виконуємо обчислення над даними<span class="page">с. 79</span></li>
+          <li><details>
+            <summary><span class="num">23</span>Створюємо модель<span class="hint">с. 74 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Що таке модель? Наведи приклади моделей навколо: глобус, іграшкова машинка, план кімнати.</li>
+              <li><span class="t-tag t-prac">Практично</span>Накресли план своєї класної кімнати. Які головні ознаки кімнати зберегла твоя модель?</li>
+              <li><span class="t-tag t-creative">Творчо</span>Створи модель шкільного подвір'я майбутнього — з паперу, конструктора або в графічному редакторі.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">24</span>Подаємо числові дані в таблиці<span class="hint">с. 75 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Які дані зручно записувати числами? Наведи три приклади.</li>
+              <li><span class="t-tag t-prac">Практично</span>Веди таблицю погоди протягом тижня: дата, температура, опади.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Порахуй і запиши в таблицю, скільки кроків ти проходиш від дому до школи три дні поспіль.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">25</span>Подаємо дані графічно<span class="hint">с. 77 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Навіщо дані перетворюють на діаграми? Що видно на діаграмі швидше, ніж у таблиці?</li>
+              <li><span class="t-tag t-prac">Практично</span>Опитай однокласників про улюблений фрукт і побудуй діаграму результатів.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Побудуй діаграму «Як я проводжу день»: сон, школа, ігри, читання.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">26</span>Виконуємо обчислення над даними<span class="hint">с. 79 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Які обчислення комп'ютер виконує швидше за людину? А що людина робить краще?</li>
+              <li><span class="t-tag t-prac">Практично</span>Склади таблицю витрат на шкільний ярмарок і порахуй загальну суму.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Знайди у своїй таблиці погоди найтеплішій і найхолодніший день тижня.</li>
+            </ul>
+          </details></li>
           <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 81</span></li>
         </ul>
       </details>
@@ -431,13 +636,55 @@ footer b{color:var(--ink)}
           <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
         <ul class="lessons">
-          <li><span class="num">27</span>Слідуємо за алгоритмами. Власні алгоритми<span class="page">с. 83</span></li>
-          <li><span class="num">28</span>Складаємо алгоритми з розгалуженнями<span class="page">с. 86</span></li>
-          <li><span class="num">29</span>Складаємо алгоритми з повтореннями<span class="page">с. 89</span></li>
-          <li><span class="num">30</span>Логічні висловлювання<span class="page">с. 91</span></li>
+          <li><details>
+            <summary><span class="num">27</span>Слідуємо за алгоритмами. Власні алгоритми<span class="hint">с. 83 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Що таке алгоритм? Наведи приклади алгоритмів із повсякденного життя.</li>
+              <li><span class="t-tag t-prac">Практично</span>Виконай алгоритм-інструкцію: склади паперовий літачок точно за кроками. Що буде, якщо кроки переплутати?</li>
+              <li><span class="t-tag t-creative">Творчо</span>Склади власний алгоритм «Мій шкільний ранок» із 6–8 команд.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">28</span>Складаємо алгоритми з розгалуженнями<span class="hint">с. 86 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Продовж речення: «Якщо на вулиці дощ, то…, інакше…». Придумай три власні приклади з умовою.</li>
+              <li><span class="t-tag t-prac">Практично</span>Склади алгоритм «Збираюся до школи» з розгалуженням: перевір, чи зроблені уроки, чи зібраний портфель.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Гра «Якщо — то»: один називає умову, інший — дію. Хто заплутається, той вибуває.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">29</span>Складаємо алгоритми з повтореннями<span class="hint">с. 89 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Які дії ти повторюєш щодня? А які — по кілька разів поспіль?</li>
+              <li><span class="t-tag t-prac">Практично</span>Запиши алгоритм із командою «повтори 5 разів»: наприклад, руханка або поливання квітів у класі.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Придумай танцювальний рух і алгоритм, у якому він повторюється. Проведи фізкультхвилинку для класу!</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">30</span>Логічні висловлювання<span class="hint">с. 91 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Визнач, істинні чи хибні висловлювання: «У тижні сім днів», «Кіт — це птах», «Зараз урок інформатики».</li>
+              <li><span class="t-tag t-prac">Практично</span>Склади по два істинні та хибні висловлювання про свій клас.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Гра «Детектив»: за трьома істинними висловлюваннями-підказками клас відгадує задуманий предмет.</li>
+            </ul>
+          </details></li>
           <li class="check"><span class="num">✓</span>Перевір себе<span class="page">с. 93</span></li>
-          <li><span class="num">31</span>Створюємо прості програми<span class="page">с. 95</span></li>
-          <li><span class="num">32</span>Мій навчальний проєкт<span class="page">с. 99</span></li>
+          <li><details>
+            <summary><span class="num">31</span>Створюємо прості програми<span class="hint">с. 95 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Чим програма відрізняється від алгоритму, записаного словами?</li>
+              <li><span class="t-tag t-prac">Практично</span>У середовищі Скретч склади програму: герой проходить сценою і вітається з тобою.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Додай до своєї програми розгалуження або повторення — нехай герой реагує на натискання клавіші.</li>
+            </ul>
+          </details></li>
+          <li><details>
+            <summary><span class="num">32</span>Мій навчальний проєкт<span class="hint">с. 99 · завдання</span></summary>
+            <ul class="tasks">
+              <li><span class="t-tag t-oral">Усно</span>Обговоріть у групі: яке місто України хочете представити у проєкті «Подорож Україною» і чому.</li>
+              <li><span class="t-tag t-prac">Практично</span>Зберіть дані про обране місто: пам'ятки, цікаві факти, фото. Оформіть їх у презентацію або цифрову історію.</li>
+              <li><span class="t-tag t-creative">Творчо</span>Презентуйте проєкт класу та дайте відповіді на запитання глядачів — як справжня команда розробників.</li>
+            </ul>
+          </details></li>
         </ul>
       </details>
 
@@ -448,15 +695,15 @@ footer b{color:var(--ink)}
           <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </summary>
         <ul class="lessons">
-          <li><span class="num">1</span>Гра «Двійкове кодування»<span class="page">с. 101</span></li>
-          <li><span class="num">2</span>Гра «Шифрувальник»<span class="page">с. 102</span></li>
-          <li><span class="num">3</span>Гра «Піратський корабель у пошуках скарбів»<span class="page">с. 103</span></li>
-          <li><span class="num">4</span>Гра «Закодуй фігуру»<span class="page">с. 104</span></li>
-          <li><span class="num">5</span>Гра «Мозаїка»<span class="page">с. 105</span></li>
-          <li><span class="num">6</span>Гра «Табличка множення»<span class="page">с. 106</span></li>
-          <li><span class="num">7</span>Проєкт «Дивна витинанка»<span class="page">с. 107</span></li>
-          <li><span class="num">8</span>Проєкт «Вежа»<span class="page">с. 108</span></li>
-          <li><span class="num">9</span>Проєкт «Мудрий циркуль»<span class="page">с. 109</span></li>
+          <li class="plain"><span class="num">1</span>Гра «Двійкове кодування»<span class="page">с. 101</span></li>
+          <li class="plain"><span class="num">2</span>Гра «Шифрувальник»<span class="page">с. 102</span></li>
+          <li class="plain"><span class="num">3</span>Гра «Піратський корабель у пошуках скарбів»<span class="page">с. 103</span></li>
+          <li class="plain"><span class="num">4</span>Гра «Закодуй фігуру»<span class="page">с. 104</span></li>
+          <li class="plain"><span class="num">5</span>Гра «Мозаїка»<span class="page">с. 105</span></li>
+          <li class="plain"><span class="num">6</span>Гра «Табличка множення»<span class="page">с. 106</span></li>
+          <li class="plain"><span class="num">7</span>Проєкт «Дивна витинанка»<span class="page">с. 107</span></li>
+          <li class="plain"><span class="num">8</span>Проєкт «Вежа»<span class="page">с. 108</span></li>
+          <li class="plain"><span class="num">9</span>Проєкт «Мудрий циркуль»<span class="page">с. 109</span></li>
         </ul>
       </details>
 

@@ -267,8 +267,23 @@ details[open] .chev{transform:rotate(180deg)}
 .game{
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:22px;box-shadow:var(--shadow);
-  display:flex;flex-direction:column;gap:8px;
 }
+.game summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:8px}
+.game summary::-webkit-details-marker{display:none}
+.game summary:hover h3{color:var(--brand-dark)}
+.game .open-hint{
+  margin-top:6px;font-weight:800;font-size:13.5px;color:var(--brand-dark);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.game .open-hint::after{content:"▾";font-size:11px;transition:transform .2s ease}
+.game[open] .open-hint::after{transform:rotate(180deg)}
+.game-rules{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+.game-rules .need{
+  font-size:13.5px;font-weight:800;color:var(--ink-soft);
+  background:var(--bg);border-radius:10px;padding:8px 12px;margin-bottom:10px;
+}
+.game-rules ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.game-rules ol li{font-size:14.5px;color:var(--ink)}
 .game .tag{
   align-self:flex-start;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
   padding:5px 10px;border-radius:999px;
@@ -762,15 +777,114 @@ footer b{color:var(--ink)}
       <p>Розділ VI «Натхнення» — грай, твори і дізнавайся більше. Усі ігри можна проводити і в класі, і вдома.</p>
     </div>
     <div class="games">
-      <div class="game"><span class="tag play">Гра</span><h3>Двійкове кодування</h3><p>Кодуємо повідомлення нулями та одиницями — як справжній комп’ютер.</p><span class="page">с. 101</span></div>
-      <div class="game"><span class="tag play">Гра</span><h3>Шифрувальник</h3><p>Створюємо власні шифри та розгадуємо таємні послання друзів.</p><span class="page">с. 102</span></div>
-      <div class="game"><span class="tag play">Гра</span><h3>Піратський корабель у пошуках скарбів</h3><p>Рухаємося за алгоритмом по карті, щоб дістатися до скарбу.</p><span class="page">с. 103</span></div>
-      <div class="game"><span class="tag play">Гра</span><h3>Закодуй фігуру</h3><p>Перетворюємо фігури на код і навпаки — тренуємо логіку.</p><span class="page">с. 104</span></div>
-      <div class="game"><span class="tag play">Гра</span><h3>Мозаїка</h3><p>Складаємо зображення з елементів за зразком-кодом, як з пікселів.</p><span class="page">с. 105</span></div>
-      <div class="game"><span class="tag play">Гра</span><h3>Табличка множення</h3><p>Повторюємо математику у формі швидкої командної гри.</p><span class="page">с. 106</span></div>
-      <div class="game"><span class="tag project">Проєкт</span><h3>Дивна витинанка</h3><p>STEAM-проєкт: симетрія, алгоритм дій і творчість в одній роботі.</p><span class="page">с. 107</span></div>
-      <div class="game"><span class="tag project">Проєкт</span><h3>Вежа</h3><p>Інженерний виклик: конструюємо найвищу стійку вежу за планом.</p><span class="page">с. 108</span></div>
-      <div class="game"><span class="tag project">Проєкт</span><h3>Мудрий циркуль</h3><p>Досліджуємо кола та побудови — геометрія зустрічається з ІТ.</p><span class="page">с. 109</span></div>
+      <details class="game">
+        <summary><span class="tag play">Гра</span><h3>Двійкове кодування</h3><p>Кодуємо повідомлення нулями та одиницями — як справжній комп’ютер.</p><span class="open-hint">Як грати</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: папір, олівці або картки з цифрами 0 та 1 · підручник с. 101</p>
+          <ol>
+            <li>Разом придумайте код: кожній літері абетки — свій набір нулів та одиниць (наприклад, А — 00001).</li>
+            <li>Перший гравець закодовує коротке слово й передає код другому.</li>
+            <li>Другий гравець розкодовує слово. Помінялися ролями!</li>
+            <li>Хто розкодує швидше й без помилок — той чемпіон кодування.</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag play">Гра</span><h3>Шифрувальник</h3><p>Створюємо власні шифри та розгадуємо таємні послання друзів.</p><span class="open-hint">Як грати</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: папір та олівці · підручник с. 102</p>
+          <ol>
+            <li>Придумайте шифр: зсуньте абетку на одну літеру (А→Б, Б→В…) або замініть літери значками.</li>
+            <li>Зашифруйте коротке послання другові.</li>
+            <li>Обміняйтеся посланнями та ключами до шифру.</li>
+            <li>Розшифруйте отримане. Ускладнення: спробуйте розгадати шифр без ключа!</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag play">Гра</span><h3>Піратський корабель у пошуках скарбів</h3><p>Рухаємося за алгоритмом по карті, щоб дістатися до скарбу.</p><span class="open-hint">Як грати</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: аркуш у клітинку, фішка-«корабель» · підручник с. 103</p>
+          <ol>
+            <li>Накресліть карту-поле у клітинку та таємно позначте, де скарб.</li>
+            <li>«Капітан» диктує команди: «2 клітинки вгору, 1 праворуч…».</li>
+            <li>«Корабель» рухається тільки за командами — ані кроку самовільно!</li>
+            <li>Дістався скарбу — команда виграла. Тепер капітаном стає інший гравець.</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag play">Гра</span><h3>Закодуй фігуру</h3><p>Перетворюємо фігури на код і навпаки — тренуємо логіку.</p><span class="open-hint">Як грати</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: два аркуші в клітинку, олівці · підручник с. 104</p>
+          <ol>
+            <li>Перший гравець малює просту фігуру по клітинках, не показуючи її.</li>
+            <li>Потім описує фігуру кодом: з якої клітинки почати та куди вести лінію.</li>
+            <li>Другий гравець малює фігуру лише за кодом.</li>
+            <li>Порівняйте малюнки. Збіглися — код було складено правильно!</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag play">Гра</span><h3>Мозаїка</h3><p>Складаємо зображення з елементів за зразком-кодом, як з пікселів.</p><span class="open-hint">Як грати</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: аркуш у клітинку, кольорові олівці · підручник с. 105</p>
+          <ol>
+            <li>Складіть код-таблицю: у якому рядку та стовпчику яка клітинка кольорова.</li>
+            <li>Передайте код другові — без малюнка!</li>
+            <li>Друг зафарбовує клітинки точно за кодом.</li>
+            <li>Розгляньте, що вийшло: піксельний малюнок! Вгадає друг, що це, до завершення?</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag play">Гра</span><h3>Табличка множення</h3><p>Повторюємо математику у формі швидкої командної гри.</p><span class="open-hint">Як грати</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: картки з прикладами на множення · підручник с. 106</p>
+          <ol>
+            <li>Поділіться на дві команди та станьте у два ряди.</li>
+            <li>Ведучий показує картку з прикладом — відповідає перший у ряді кожної команди.</li>
+            <li>Правильна відповідь — крок уперед, помилка — крок назад.</li>
+            <li>Перемагає команда, яка першою дійде до фінішної лінії.</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag project">Проєкт</span><h3>Дивна витинанка</h3><p>STEAM-проєкт: симетрія, алгоритм дій і творчість в одній роботі.</p><span class="open-hint">Як зробити</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: папір, ножиці, олівець · підручник с. 107</p>
+          <ol>
+            <li>Складіть аркуш навпіл один або кілька разів.</li>
+            <li>Запишіть алгоритм вирізання: де і які фігури вирізати.</li>
+            <li>Виріжте точно за своїм алгоритмом, не імпровізуючи.</li>
+            <li>Розгорніть аркуш. Чи такий візерунок ви задумали? Знайдіть у ньому осі симетрії.</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag project">Проєкт</span><h3>Вежа</h3><p>Інженерний виклик: конструюємо найвищу стійку вежу за планом.</p><span class="open-hint">Як зробити</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: папір або трубочки, скотч, лінійка · підручник с. 108</p>
+          <ol>
+            <li>Накресліть план майбутньої вежі: яка основа, скільки поверхів.</li>
+            <li>За 10 хвилин збудуйте вежу точно за планом.</li>
+            <li>Виміряйте висоту та перевірте стійкість: вежа має простояти 30 секунд.</li>
+            <li>Обговоріть: що б ви змінили у плані наступного разу?</li>
+          </ol>
+        </div>
+      </details>
+      <details class="game">
+        <summary><span class="tag project">Проєкт</span><h3>Мудрий циркуль</h3><p>Досліджуємо кола та побудови — геометрія зустрічається з ІТ.</p><span class="open-hint">Як зробити</span></summary>
+        <div class="game-rules">
+          <p class="need">Потрібно: циркуль, олівець, папір · підручник с. 109</p>
+          <ol>
+            <li>Складіть алгоритм-інструкцію: скільки кіл, яких радіусів і де їх креслити.</li>
+            <li>Побудуйте візерунок з кіл точно за своїм алгоритмом.</li>
+            <li>Розфарбуйте орнамент і порахуйте, скільки в ньому кіл.</li>
+            <li>Обміняйтеся алгоритмами з другом: чи вийдуть у вас однакові візерунки?</li>
+          </ol>
+        </div>
+      </details>
     </div>
   </div>
 </section>
